@@ -1,0 +1,285 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  background: url("images/layered-waves-haikei.svg") no-repeat center center
+    fixed;
+  background-size: cover;
+  padding: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  max-height: 70vh;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.todo-app h2 {
+  color: #001220;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.todo-app h2 img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.editing {
+  list-style: none;
+  font-size: 17px;
+  padding: 0;
+  user-select: none;
+  position: relative;
+  min-width: inherit;
+}
+
+.input-field {
+  list-style: none;
+  font-size: inherit;
+  padding: inherit;
+  user-select: none;
+  position: relative;
+  min-width: inherit;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 13px 60px 13px 30px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  min-width: 200px;
+  display: grid;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px;
+  background: #f34c39;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+  font-size: 18px;
+}
+
+button:hover {
+  background: #ff6250;
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/list-icon.png);
+  background-size: cover;
+  background-position: center;
+  top: 9px;
+  left: 0;
+}
+
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+
+ul li.checked::before {
+  background-image: url(images/checkbox.png);
+}
+
+.editIcon {
+  position: absolute;
+  background-position: center;
+  top: 13.5px;
+  right: 35px;
+  font-size: medium;
+}
+
+.editIcon:hover {
+  color: rgb(19, 96, 25);
+  font-size: larger;
+}
+
+.deleteIcon {
+  position: absolute;
+  background-position: center;
+  top: 13.5px;
+  right: 10px;
+  font-size: medium;
+}
+
+.deleteIcon:hover {
+  color: rgb(133, 19, 19);
+  font-size: larger;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 253, 253, 0.8);
+  color: rgb(2, 0, 0);
+  padding: 0 10px;
+  border-radius: 50px;
+  text-align: center;
+  z-index: 999;
+}
+
+#popup-message {
+  font-size: medium;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    background: url("images/layered-waves-haikei.svg") no-repeat center center
+      fixed;
+    background-size: cover;
+    padding: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 70vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    font-size: 14px;
+  }
+
+  .todo-app {
+    margin: 150px auto 20px;
+  }
+
+  .row {
+    justify-content: space-around;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  .todo-app {
+    width: 70%;
+  }
+
+  .todo-app h2 {
+    font-size: 18px;
+  }
+
+  .todo-app h2 img {
+    width: 20px;
+  }
+
+  .row {
+    margin: 15px -15px;
+    padding-left: 5px;
+  }
+
+  input {
+    padding: 10px 5px 10px;
+    font-size: 11.5px;
+  }
+
+  #input-box {
+    font-size: 12px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 11.5px;
+  }
+
+  ul li {
+    font-size: 11.4px;
+    padding: 15px 75px 15px 25px;
+    left: -60px;
+  }
+
+  .task-container {
+    margin-left: 5px;
+    margin-right: -30px;
+  }
+
+  .editing {
+    padding: 0;
+    font-size: inherit;
+    margin-right: -30px;
+  }
+
+  .editIcon {
+    top: 14px;
+    right: 25px;
+    font-size: small;
+  }
+
+  .deleteIcon {
+    top: 14px;
+    right: 2px;
+    font-size: small;
+  }
+
+  #popup-message {
+    font-size: 12px;
+  }
+
+}
